@@ -52,7 +52,8 @@ Library
   Math.Plex
   
   -- Packages needed in order to build this package.
-  -- Build-depends:       
+  -- Build-depends:  
+  Build-depends: array, containers     
   
   -- Modules not exported by this package.
   -- Other-modules:       
