@@ -1,0 +1,4 @@
+* Clean up PersistentHomology.hs.
+* Analyze gains from increased strictness.
+* Stop abusing Show.
+* Cabalize.

@@ -1,0 +1,63 @@
+THE UNNAMED PROJECT FOR PERSISTENT HOMOLOGY IN HASKELL
+
+Gard Spreemann
+
+(0) CAVEATS
+
+First of all, my Haskell-fu is weak. I surely make many mistakes,
+ranging from the cute ones that invite "oh, that's nice, but that
+ten-line function you wrote is really just the following cryptic
+composition of six built-in functions with scary names" from more
+skilled people, to horrible design choices and performance problems.
+
+More importantly, there may very well be serious mistakes in my code
+that have nothing to do with Haskell. I will not guarantee that my
+code will leave your house intact or your pets alive, let alone that
+it will actually correctly compute persistent homology of your point
+cloud or filtered complex! I have done some sanity checks against
+javaPlex [1], but these are far from exhaustive. Beware.
+
+To conclude, The Unnamed Project for Persistent Homology in Haskell
+(hereafter "pershom") is not at all something I feel is ready to be
+shared with the world. However, after Mikael Vejdemo Johansson made me
+aware that he and Andrew Tausz have been working on their own Haskell
+persistent homology project, hPlex [2], I concluded that maybe there
+would be some slight use for my horrible code afterall. Better to
+swallow my pride than run the risk of others having to redo my work.
+
+See also TODO.
+
+(1) OVERVIEW
+
+I've tried to keep the code modularized; the data structures for
+various filtered complex are kept independent from the actual
+persistent homology computations. The example program ("Main.hs") ties
+these together to a single pipeline for computing persistent homology
+of a point cloud, but they can also be used independently of each
+other.
+
+Persistence itself (Math.PersistentHomology.PersistentHomology) is
+computed using Zomorodian and Carlsson's algorithm from [3].
+
+Various flag complexes are constructed as outlined in [4].
+
+(2) REQUIREMENTS AND BUILDING
+
+I haven't gotten around to cabalizing the package yet, so there's no
+dependency handling. You'll need the vector package as well as
+unordered-containers.
+
+I've tested the example program with GHC 7.0. You can build it with
+ ghc -O2 -o ph --make Main.hs
+from inside the src directory.
+
+
+[1] http://code.google.com/p/javaplex/ 
+
+[2] http://code.google.com/p/hplex/ 
+
+[3] Zomorodian, Carlsson. Computing Persistent Homology. Discrete
+Comput Geom 33:249--274 (2005).
+
+[4] Zomorodian. Fast Construction of the Vietoris-Rips
+Complex. Computers & Graphics, vol. 34, issue 3, pp. 263--271 (2010).

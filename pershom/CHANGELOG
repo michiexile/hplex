@@ -1,0 +1,9 @@
+* 2012-03-29
+  - Reorganized code.
+    o QuickCheck tests are not updated to reflect this.
+  - Various new features too numerous to mention.
+  - Improvements to witness complex construction.
+  - Further sanity checks against javaPlex have been performed.
+
+* Ca. September 2011
+  Initial release.
