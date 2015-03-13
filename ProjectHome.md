@@ -1,0 +1,1 @@
+Computational topology — in particular persistent homology and cohomology computation — in Haskell.
